@@ -23,6 +23,7 @@ const todos = [
 // ES6 format
 // todos.forEach((todo) => console.log(todo.text)); //list text arrays
 
+console.log('Showing values after being iterated using forEach, getting only values of text from Object:'); 
 todos.forEach(function(todo) {
     console.log(todo.text); //list text arrays
 });
@@ -31,10 +32,21 @@ todos.forEach(function(todo) {
 const todoText = todos.map(function(todo) {
     return todo.text;
 });
+
+console.log('Showing values after being mapped, getting only values of text from Object:'); 
 console.log(todoText); 
 
-// filter method, returns a filtered array so need to assign to a variable
+// filter method returns a filtered arrays
 const todoCompleted = todos.filter(function(todo) {
+    // returns a new array where the object variable isCompleted is true
+    return todo.isCompleted === true;
+});
+
+console.log('Showing filtered values after using filter, getting only values where isCompleted is equals to true:'); 
+console.log(todoCompleted);
+
+// filter method, returns a filtered array so need to assign to a variable
+const todoCompleted_mapped = todos.filter(function(todo) {
     // returns a new array where the object variable isCompleted is true
     return todo.isCompleted === true;
 }).map(function(todo) {
@@ -42,4 +54,5 @@ const todoCompleted = todos.filter(function(todo) {
     return todo.text;
 })
 
-console.log(todoCompleted);
+console.log('Showing filtered values after using filter, getting only values where isCompleted is equals to true, then being mapped to get only the values in text:'); 
+console.log(todoCompleted_mapped);
