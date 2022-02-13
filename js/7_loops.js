@@ -51,31 +51,3 @@ for(let todo of todos){
     // Shows only id of todo object
     console.log(todo.id);
 }
-
-// High order array methods
-
-// forEach method
-
-// ES6 format
-// todos.forEach((todo) => console.log(todo.text)); //list text arrays
-
-todos.forEach(function(todo) {
-    console.log(todo.text); //list text arrays
-});
-
-// map method, returns the same array, or changed array affecting all objects in the array
-const todoText = todos.map(function(todo) {
-    return todo.text;
-});
-console.log(todoText); 
-
-// filter method, returns a filtered array so need to assign to a variable
-const todoCompleted = todos.filter(function(todo) {
-    // returns a new array where the object variable isCompleted is true
-    return todo.isCompleted === true;
-}).map(function(todo) {
-    // Chaining map would only return text string array in todo
-    return todo.text;
-})
-
-console.log(todoCompleted);
